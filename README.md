@@ -1,0 +1,1 @@
+Global error handling is implemented, so explicit try–catch blocks are not required in controllers or services. All errors are automatically captured, logged, and returned in a standardized response format.
