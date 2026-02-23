@@ -22,6 +22,7 @@ export default class RoleService {
   async createAppointment(req: any): Promise<{ appointment: any }> {
     let doc = {};
     const zod = CreateAppointmentSchema.parse(req);
+    console.log("zod", zod);
     doc = await this.appointmentModel.create(zod);
     return { appointment: doc };
   }
