@@ -1,22 +1,35 @@
-export default [
+import authModel from "./auth";
+import roleModel from "./role";
+import appointmentModel from "./appointment";
+import sellerModel from "./seller";
+import inquiryModel from "./inquiry";
+
+interface ModelConfig {
+  name: string;
+  model: any;
+}
+
+const models: ModelConfig[] = [
   {
     name: "authModel",
-    model: require("./auth").default,
+    model: authModel,
   },
   {
     name: "roleModel",
-    model: require("./role").default,
+    model: roleModel,
   },
   {
     name: "appointmentModel",
-    model: require("./appointment").default,
+    model: appointmentModel,
   },
   {
     name: "sellerModel",
-    model: require("./seller").default,
+    model: sellerModel,
   },
   {
     name: "inquiryModel",
-    model: require("./inquiry").default,
+    model: inquiryModel,
   },
 ];
+
+export default models;
