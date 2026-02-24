@@ -10,7 +10,8 @@
     "test": "echo Test passed",
     "start": "node dist/app.ts",
     "dev": "nodemon",
-    "build": "echo Build successful"
+    "build": "echo Build successful",
+    "lint": "eslint ."
   },
   "dependencies": {
     "agenda": "^5.0.0",
