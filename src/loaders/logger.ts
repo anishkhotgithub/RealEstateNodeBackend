@@ -6,12 +6,12 @@ const customFormat = winston.format.printf(
 
     if (Object.keys(meta).length > 0) {
       const {
-        errorLabelSet,
-        errorResponse,
-        index,
-        keyPattern,
-        keyValue,
-        code,
+        //errorLabelSet,
+        //errorResponse,
+        //index,
+        //keyPattern,
+        //keyValue,
+        //code,
         ...cleanMeta
       } = meta;
 

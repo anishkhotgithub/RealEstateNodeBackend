@@ -57,7 +57,13 @@ export const errorHandler = (error: any, req: Request, res: Response) => {
     error: String(error),
   });
 };
+type AsyncRouteHandler = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => Promise<any>;
 
 export const asyncHandler =
-  (fn: Function) => (req: Request, res: Response, next: NextFunction) =>
+  (fn: AsyncRouteHandler) =>
+  (req: Request, res: Response, next: NextFunction) =>
     Promise.resolve(fn(req, res, next)).catch(next);

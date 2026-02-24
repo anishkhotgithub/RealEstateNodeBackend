@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import inquiryService from "../services/inquiry";
 import Container from "typedi";
 

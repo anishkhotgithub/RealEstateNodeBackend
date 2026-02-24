@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import roleService from "../services/role";
 import Container from "typedi";
 
