@@ -17,7 +17,7 @@ jobs:
       - name: 🟢 Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: "22.x"
           cache: "npm"
 
       - name: 📦 Install Dependencies
@@ -26,10 +26,13 @@ jobs:
       - name: 🧹 Run Linter
         run: npm run lint
 
+      - name: 🏗 Build Project
+        run: npm run build
+
       - name: 🧪 Run Backend Tests
         run: npm test
 
       - name: 🚀 Verify Server Starts
         run: |
-          node server.js &
+          node dist/app.js &
           sleep 5
