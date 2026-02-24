@@ -1,4 +1,10 @@
-import { Request, Response, NextFunction } from "express";
+import {
+  Request,
+  Response,
+  NextFunction,
+  Router,
+  RequestHandler,
+} from "express";
 import { MongoServerError } from "mongodb";
 import { Container } from "typedi";
 import { Logger } from "winston";
@@ -61,8 +67,9 @@ type AsyncRouteHandler = (
   req: Request,
   res: Response,
   next: NextFunction,
-) => Promise<void>;
+) => Promise<void> | void;
+
 export const asyncHandler =
-  (fn: AsyncRouteHandler) =>
+  (fn: AsyncRouteHandler | Router | RequestHandler) =>
   (req: Request, res: Response, next: NextFunction) =>
-    Promise.resolve(fn(req, res, next)).catch(next);
+    Promise.resolve((fn as AsyncRouteHandler)(req, res, next)).catch(next);
