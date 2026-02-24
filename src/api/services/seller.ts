@@ -1,5 +1,4 @@
 import { Service, Inject } from "typedi";
-import { Logger } from "winston";
 import { CreateSellerSchema, GetSellerSchema } from "../types/seller";
 import Helper from "../../helper";
 import mongoose from "mongoose";

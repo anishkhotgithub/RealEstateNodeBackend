@@ -1,5 +1,4 @@
 import { Service, Inject } from "typedi";
-import { Logger } from "winston";
 import { CreateInquirySchema, GetInquirySchema } from "../types/inquiry";
 import Helper from "../../helper";
 import mongoose from "mongoose";

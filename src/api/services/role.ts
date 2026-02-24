@@ -1,9 +1,6 @@
 import { Service, Inject } from "typedi";
 import { Logger } from "winston";
-import { CreateAuthSchema } from "../types/auth";
-import Helper from "../../helper";
 import mongoose from "mongoose";
-import * as z from "zod";
 import { redis } from "../../helper/redis";
 import { CreateRoleSchema } from "../types/role";
 

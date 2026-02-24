@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
 interface IAppointment extends Document {
   propertyId: mongoose.Types.ObjectId;

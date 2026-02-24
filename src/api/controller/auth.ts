@@ -12,7 +12,7 @@ class authController {
       data: data.user,
     });
   };
-  getUser = async (req: Request, res: Response, next: NextFunction) => {
+  getUser = async (req: Request, res: Response) => {
     const authServiceInstance = Container.get(AuthService);
     const data = await authServiceInstance.getUsers(req.body);
     return res.status(200).json({
@@ -21,7 +21,7 @@ class authController {
       data: data.user,
     });
   };
-  updateUsers = async (req: Request, res: Response, next: NextFunction) => {
+  updateUsers = async (req: Request, res: Response) => {
     const authServiceInstance = Container.get(AuthService);
     const data = await authServiceInstance.updateUsers(req.body);
     return res.status(200).json({
@@ -30,7 +30,7 @@ class authController {
       data: data.user,
     });
   };
-  deleteUsers = async (req: Request, res: Response, next: NextFunction) => {
+  deleteUsers = async (req: Request, res: Response) => {
     const authServiceInstance = Container.get(AuthService);
     const data = await authServiceInstance.deleteUsers(req.body);
     return res.status(200).json({
@@ -39,7 +39,7 @@ class authController {
       data: data.user,
     });
   };
-  login = async (req: Request, res: Response, next: NextFunction) => {
+  login = async (req: Request, res: Response) => {
     const authServiceInstance = Container.get(AuthService);
     const data = await authServiceInstance.login(req.body);
     return res.status(200).json({
@@ -48,7 +48,7 @@ class authController {
       data: data,
     });
   };
-  Logout = async (req: Request, res: Response, next: NextFunction) => {
+  Logout = async (req: Request, res: Response) => {
     const authServiceInstance = Container.get(AuthService);
     const data = await authServiceInstance.Logout(req.body);
     return res.status(200).json({

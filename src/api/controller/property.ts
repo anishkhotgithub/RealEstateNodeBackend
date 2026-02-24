@@ -12,7 +12,7 @@ class propertyController {
       data: property.property,
     });
   };
-  getProperties = async (req: Request, res: Response, next: NextFunction) => {
+  getProperties = async (req: Request, res: Response) => {
     const propertyServiceInstance = Container.get(propertyService);
     const property = await propertyServiceInstance.getProperties(req.body);
     return res.status(200).json({

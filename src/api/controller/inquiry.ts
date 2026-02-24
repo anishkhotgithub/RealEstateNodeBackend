@@ -12,7 +12,7 @@ class inquiryController {
       data: inquiry.inquiry,
     });
   };
-  getInquiries = async (req: Request, res: Response, next: NextFunction) => {
+  getInquiries = async (req: Request, res: Response) => {
     const inquiryServiceInstance = Container.get(inquiryService);
     const inquiry = await inquiryServiceInstance.getInquiries(req.body);
     return res.status(200).json({

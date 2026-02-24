@@ -12,7 +12,7 @@ class sellerController {
       data: seller.seller,
     });
   };
-  getSellers = async (req: Request, res: Response, next: NextFunction) => {
+  getSellers = async (req: Request, res: Response) => {
     const sellerServiceInstance = Container.get(sellerService);
     const seller = await sellerServiceInstance.getSellers(req.body);
     return res.status(200).json({

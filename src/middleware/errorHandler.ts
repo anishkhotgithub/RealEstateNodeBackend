@@ -5,12 +5,7 @@ import { Logger } from "winston";
 import { ZodError } from "zod";
 import helper from "../helper";
 
-export const errorHandler = (
-  error: any,
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const errorHandler = (error: any, req: Request, res: Response) => {
   const logger: Logger = Container.get("logger");
 
   // Zod validation errors

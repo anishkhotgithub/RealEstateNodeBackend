@@ -12,7 +12,7 @@ class roleController {
       data: role,
     });
   };
-  getRoles = async (req: Request, res: Response, next: NextFunction) => {
+  getRoles = async (req: Request, res: Response) => {
     const roleServiceInstance = Container.get(roleService);
     const role = await roleServiceInstance.getRoles(req.body);
     return res.status(200).json({
