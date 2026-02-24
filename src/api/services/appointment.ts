@@ -35,6 +35,7 @@ export default class RoleService {
     if (cached) {
       return JSON.parse(cached);
     }
+    console.log("Cache miss for appointments");
     const buyer = await this.authModel.aggregate([
       {
         $lookup: {
